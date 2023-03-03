@@ -1,0 +1,71 @@
+body {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f2f2f2;
+}
+
+a {
+  color: #ccddff;
+}
+
+table {
+  background-color: #333333;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #555555;
+  padding: 8px;
+}
+
+th {
+  background-color: #666666;
+  color: #f2f2f2;
+}
+
+td {
+  background-color: #444444;
+}
+
+tr:nth-child(even) td {
+  background-color: #333333;
+}
+
+/* Form elements */
+input[type=text], input[type=password], textarea, select {
+  background-color: #333333;
+  color: #e6e6e6;
+  border: 1px solid #555555;
+  border-radius: 4px;
+}
+
+input[type=submit], button {
+  background-color: #555555;
+  color: #e6e6e6;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover, button:hover {
+  background-color: #777777;
+}
+
+/* Code blocks */
+pre {
+  background-color: #333333;
+  color: #e6e6e6;
+  padding: 8px;
+  overflow-x: auto;
+}
+
+code {
+  background-color: #444444;
+  color: #ccffcc;
+  padding: 2px 4px;
+  border-radius: 4px;
+}

@@ -34,7 +34,7 @@ if __name__ == '__main__':
     }
 
     # Convert dictionary to JSON string
-    json_data = json.dumps(data)
+    json_data = json.dumps(data, indent=2)
 
     # Write JSON string to file
     with open(output_file, 'w') as f:

@@ -1,0 +1,48 @@
+<svg id="lkars_svg" version="1.1" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+    body {
+	background: #000;
+}
+svg {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 100;
+	animation: dash 1s linear forwards;
+	stroke-linecap: round;
+	fill: rgba(255, 130, 0, 1);
+}
+
+</style>			<symbol id="frameFull">
+			<path id="frameFullNoButtons" d="m47.4414 788c-25.367 0-46.9889-17.3002-47.4307-42.3924h-0.00975v-102.241h94.836v99.7468h0.0136v7.89597c0 6.67708 4.477 12.0534 10.0388 12.0534h39.8821v24.9367h-49.9209zm102.322 0v-24.9367h968.465v24.9367zm973.457 0v-24.9367h39.8821c5.5618 0 10.0388-5.37631 10.0388-12.0534v-7.89598h0.014v-99.7468h94.8357v102.241h-0.01c-0.4418 25.0922-22.0637 42.3924-47.4306 42.3924h-47.4091zm-1075.78-788c-25.367 0-46.9889 17.3002-47.4307 42.3924h-0.00975v102.24h94.836v-99.7468h0.0136v-7.89598c0-6.67707 4.477-12.0534 10.0388-12.0534h39.8821v-24.9367h-97.3301zm102.322 0v24.9367h968.465v-24.9367zm973.457 0v24.9367h39.8821c5.5618 0 10.0388 5.37631 10.0388 12.0534v7.89598h0.014v99.7468h94.836v-102.24h-0.01c-0.4419-25.0922-22.0638-42.3924-47.4307-42.3924h-97.3301z" />
+		</symbol>
+	<symbol id="buttonsFull">
+		<g id="buttonsLeft">
+			<rect id="pausePlay" transform="translate(0,155)" width="95" height="232" onclick="pausePlay()" />
+			<path id="playTriangle" transform="translate(5,350)" class="play" d="M0 0 L10 5 L0 10 Z" style="fill:black" />
+			<path id="pauseSquare" transform="translate(5,350)" d="M0 0 L5 0 L5 10 L0 10 Z M6 0 L10 0 L10 10 L6 10 Z" style="fill:black" />
+			<rect id="buttonLast" transform="translate(0,400)" width="95" height="232" onclick="showLast()" />
+			<path id="last arrorw" transform="translate(5,605)" d="m30 0v15l-14.5263-7.49998zm-15.4737 0v15l-14.5263-7.49998z" style="fill:#000000" />
+		</g>
+		<g id="buttonsRight">
+			<rect id="buttonUp" transform="translate(1172.5,155)" width="95" height="232" onclick="showMenu()" />
+			<path id="menu" transform="translate(1227.5,350)" d="M0 10h35M0 20h35M0 30h35" style="fill:none;stroke:#000000;stroke-width:2" />
+			<rect id="buttonNext" transform="translate(1172.5,400)" width="95" height="232" onclick="showNext()" />
+			<path id="nextArrow" transform="translate(1232.5,605)" d="m0 0v15l14.5263-7.49998zm15.4737 0v15l14.5263-7.49998z" style="fill:#000000" />
+		</g>
+	</symbol>
+	<symbol id="jamesWeb">
+		<clipPath id="clip">
+			<rect id="rect4958" x="5" y="5" width="1060" height="725" rx="25" ry="25" />
+</clipPath>
+		<!--	image template	-->
+		<image id="image1" x="0" y="0" width="1060" height="725" x="50%" y="50%" transform="translate(-5, -5)" clip-path="url(#clip)" visibility="visible" style="image-rendering:optimizeSpeed" preserveAspectRatio="xMidYMid meet" href="https://via.placeholder.com/1280x800.png?text=Nasa+James+web+image+1" />
+		<image id="image2" x="0" y="0" width="1060" height="725" x="50%" y="50%" transform="translate(-5, -5)" clip-path="url(#clip)" visibility="hidden" style="image-rendering:optimizeSpeed" preserveAspectRatio="xMidYMid meet" href="https://via.placeholder.com/1280x800.png?text=Nasa+James+web+image+2" />
+				<image id="image3" x="0" y="0" width="1060" height="725" x="50%" y="50%" transform="translate(-5, -5)" clip-path="url(#clip)" visibility="hidden" style="image-rendering:optimizeSpeed" preserveAspectRatio="xMidYMid meet" href="https://via.placeholder.com/1280x800.png?text=Nasa+James+web+image+3" />
+	</symbol>
+
+	<g id="pictureFrame" transform="translate(0,0)">
+		<use id="window1a" href="#frameFull" />
+		<use href="#jamesWeb" transform="translate(100 30)" />
+		<use id="buttons1b" class="button" href="#buttonsFull" />
+	</g>
+
+</svg>
