@@ -1,4 +1,4 @@
-# Sensors JSON
+# Sensors API
 
 A Python script to retrieve data from various sensors connected via I2C and output the data in JSON format.
 
