@@ -10,7 +10,7 @@ from modules import bmp280_data
 
 # Set the path for the RAM disk and the output file
 ram_disk_path = "/run/user/1000/"
-output_file = os.path.join(ram_disk_path, "its/i2cSensors.json")
+output_file = os.path.join(ram_disk_path, "its/sensors-api.json")
 
 
 # Check if the directory exists and create it if it doesn't
@@ -38,29 +38,29 @@ data["cpu_dump"] = cpu_dump
 i=0
 
 while True:
+	try:
 # Scan the I2C bus for connected devices
-	for address in addresses:
-	    try:
-	        bus.read_byte(address)
-	        # If the sensor is present at the address, retrieve data from it
-	        if address == 0x77:
-	            bme680_dump = json.loads(bme680_data.get_bme680_data())
-	            data["bme680"] = bme680_dump
-	        elif address == 0x76:
-	            bmp280_dump = json.loads(bmp280_data.get_bmp280_data())
-	            data["bmp280"] = bmp280_dump
-	        elif address == 0x40:
-	            ina260_data_dump = json.loads(ina260_data.get_ina260_data())
-	            data["ina260_data"] = ina260_data_dump
-	    except:
-	        # If the sensor is not present at the address, skip it
-	        pass
-
-# Convert dictionary to JSON string
-	json_data = json.dumps(data, indent=2)
-
-# Write JSON string to file
-	with open(output_file, 'w') as f:
-		f.write(json_data)
-
-	time.sleep(1)
+		for address in addresses:
+			try:
+				bus.read_byte(address)
+				# If the sensor is present at the address, retrieve data from it
+				if address == 0x77:
+					bme680_dump = json.loads(bme680_data.get_bme680_data())
+					data["bme680_dump"] = bme680_dump
+				elif address == 0x76:
+					bmp280_dump = json.loads(bmp280_data.get_bmp280_data())
+					data["bmp280_dump"] = bmp280_dump
+				elif address == 0x40:
+					ina260_data_dump = json.loads(ina260_data.get_ina260_data())
+					data["ina260_dump"] = ina260_data_dump
+			except:
+				# If the sensor is not present at the address, skip it
+				pass
+	# Convert dictionary to JSON string
+		json_data = json.dumps(data, indent=2)
+# Write JSON string to file using a shell command
+		os.system(f'echo "{json_data}" > {output_file}')
+		time.sleep(1)
+#	print(json_data)
+	except OSError as e:
+			print(f"Error: {e}")
