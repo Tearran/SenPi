@@ -1,8 +1,8 @@
-# Sensors JSON
+# Sensors API
 
-A Python script to retrieve data from various sensors connected via I2C and output the data in JSON format.
+A Python script to retrieve data from various sensors connected via I2C and output the data.
 
-The script will output the sensor data in JSON format.
+The script outputs the sensor data in JSON format. TO a RAM disk.
 
 ## Supported Sensors
 - BMP280 temperature and pressure sensor
